@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.common.persistence.dao.TicketOrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.common.persistence.model.TicketOrder">
+        <id column="id" property="id" />
+        <result column="single_num" property="singleNum" />
+        <result column="single_num_privilege" property="singleNumPrivilege" />
+        <result column="double_num" property="doubleNum" />
+        <result column="double_num_privilege" property="doubleNumPrivilege" />
+        <result column="status" property="status" />
+        <result column="ticket_num" property="ticketNum" />
+        <result column="ticket_person" property="ticketPerson" />
+        <result column="ticket_person_identity" property="ticketPersonIdentity" />
+        <result column="ticket_person_phone" property="ticketPersonPhone" />
+        <result column="create_userid" property="createUserid" />
+        <result column="create_time" property="createTime" />
+        <result column="update_userid" property="updateUserid" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, single_num AS singleNum, single_num_privilege AS singleNumPrivilege, double_num AS doubleNum, double_num_privilege AS doubleNumPrivilege, status, ticket_num AS ticketNum, ticket_person AS ticketPerson, ticket_person_identity AS ticketPersonIdentity, ticket_person_phone AS ticketPersonPhone, create_userid AS createUserid, create_time AS createTime, update_userid AS updateUserid, update_time AS updateTime
+    </sql>
+
+</mapper>
