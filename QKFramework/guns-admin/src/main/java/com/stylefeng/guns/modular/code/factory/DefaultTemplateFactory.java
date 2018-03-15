@@ -43,7 +43,7 @@ public class DefaultTemplateFactory {
     public static GenQo getDefaultParams(){
         GenQo genQo = new GenQo();
         genQo.setProjectPath(ToolUtil.getWebRootPath(null));
-        genQo.setAuthor("stylefeng");
+        genQo.setAuthor("tomzhou");
         genQo.setProjectPackage(GunsApplication.class.getPackage().getName());
         genQo.setCorePackage(CoreFlag.class.getPackage().getName());
         genQo.setIgnoreTabelPrefix("sys_");
