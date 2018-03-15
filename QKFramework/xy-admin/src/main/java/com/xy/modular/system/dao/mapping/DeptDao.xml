@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xy.modular.system.dao.DeptDao">
+
+	<select id="tree" resultType="com.xy.core.node.ZTreeNode">
+		select id,pid as pId,simplename as name,
+		(
+		CASE
+		WHEN (pId = 0 OR pId IS NULL) THEN
+			'true'
+		ELSE
+			'false'
+		END
+		) as isOpen from sys_dept
+	</select>
+	
+	<select id="treeByRoleId" resultType="com.xy.core.node.ZTreeNode">
+		select sd.id,sd.pid as pId,sd.simplename as name,
+		(
+		CASE
+		WHEN (sd.pId = 0 OR sd.pId IS NULL) THEN
+			'true'
+		ELSE
+			'false'
+		END
+		) as isOpen,
+	    (CASE WHEN (sdc.org_id IS NOT NULL) THEN
+				'true'
+			ELSE
+				'false'
+			END
+	   ) as checked
+	 from sys_dept sd 
+	LEFT OUTER JOIN sys_data_control sdc ON sd.id = sdc.org_id AND sdc.role_id = #{roleId}
+	</select>
+
+	<select id="list" resultType="map">
+		select * from sys_dept
+		<if test="condition != null and condition != ''">
+			where simplename like CONCAT('%',#{condition},'%') or fullname like CONCAT('%',#{condition},'%')
+		</if>
+		order by num ASC
+	</select>
+
+</mapper>

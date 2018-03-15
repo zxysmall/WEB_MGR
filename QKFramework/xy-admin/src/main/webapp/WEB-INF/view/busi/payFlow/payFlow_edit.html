@@ -1,0 +1,32 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="seq" name="流水号" value="${item.seq}" underline="true"/>
+                            <#input id="status" name="（支付状态【0：支付成功；1：支付流程创建；2：支付请求发生；3:收到支付响应】）" value="${item.status}" underline="true"/>
+                            <#input id="orderId" name="订单号" value="${item.orderId}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="excutedClass" name="执行类" value="${item.excutedClass}" underline="true"/>
+                            <#input id="processId" name="流程定义ID" value="${item.processId}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="PayFlowInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="PayFlowInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/busi/payFlow/payFlow_info.js"></script>
+@}
