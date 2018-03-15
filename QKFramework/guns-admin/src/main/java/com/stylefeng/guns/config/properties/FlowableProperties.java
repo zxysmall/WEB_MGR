@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Configuration;
  * @date 2017-12-02 23:18
  */
 @Configuration
-@ConfigurationProperties(prefix = GunsFlowableProperties.GUNS_FLOWABLE_DATASOURCE)
-public class GunsFlowableProperties {
+@ConfigurationProperties(prefix = FlowableProperties.GUNS_FLOWABLE_DATASOURCE)
+public class FlowableProperties {
 
-    public static final String GUNS_FLOWABLE_DATASOURCE = "guns.flowable.datasource";
+    public static final String GUNS_FLOWABLE_DATASOURCE = "xy.flowable.datasource";
 
     //默认多数据源的链接
     private String url = "jdbc:mysql://127.0.0.1:3306/guns_flowable?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull";

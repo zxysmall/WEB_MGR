@@ -1,6 +1,6 @@
 package com.stylefeng.guns.config.web;
 
-import com.stylefeng.guns.config.properties.GunsProperties;
+import com.stylefeng.guns.config.properties.XyProperties;
 import com.stylefeng.guns.core.shiro.ShiroDbRealm;
 import org.apache.shiro.cache.CacheManager;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
@@ -61,7 +61,7 @@ public class ShiroConfig {
      */
     @Bean
     @ConditionalOnProperty(prefix = "guns", name = "spring-session-open", havingValue = "false")
-    public DefaultWebSessionManager defaultWebSessionManager(CacheManager cacheShiroManager, GunsProperties gunsProperties) {
+    public DefaultWebSessionManager defaultWebSessionManager(CacheManager cacheShiroManager, XyProperties gunsProperties) {
         DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
         sessionManager.setCacheManager(cacheShiroManager);
         sessionManager.setSessionValidationInterval(gunsProperties.getSessionValidationInterval() * 1000);

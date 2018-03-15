@@ -1,7 +1,7 @@
 package com.stylefeng.guns.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.stylefeng.guns.config.properties.GunsFlowableProperties;
+import com.stylefeng.guns.config.properties.FlowableProperties;
 import com.stylefeng.guns.core.datasource.DruidProperties;
 import com.stylefeng.guns.core.flowable.GunsDefaultProcessDiagramGenerator;
 import org.flowable.spring.SpringAsyncExecutor;
@@ -27,7 +27,7 @@ public class FlowableConfig extends AbstractProcessEngineAutoConfiguration {
     DruidProperties druidProperties;
 
     @Autowired
-    GunsFlowableProperties gunsFlowableProperties;
+    FlowableProperties gunsFlowableProperties;
 
     /**
      * flowable单独的数据源

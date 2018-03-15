@@ -1,6 +1,6 @@
 package com.stylefeng.guns.core.util;
 
-import com.stylefeng.guns.config.properties.GunsProperties;
+import com.stylefeng.guns.config.properties.XyProperties;
 
 /**
  * 验证码工具类
@@ -14,6 +14,6 @@ public class KaptchaUtil {
      * @Date 2017/5/23 22:34
      */
     public static Boolean getKaptchaOnOff() {
-        return SpringContextHolder.getBean(GunsProperties.class).getKaptchaOpen();
+        return SpringContextHolder.getBean(XyProperties.class).getKaptchaOpen();
     }
 }

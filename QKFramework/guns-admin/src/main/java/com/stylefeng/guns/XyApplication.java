@@ -1,6 +1,6 @@
 package com.stylefeng.guns;
 
-import com.stylefeng.guns.config.properties.GunsProperties;
+import com.stylefeng.guns.config.properties.XyProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,16 +12,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 /**
  * SpringBoot方式启动类
  *
- * @author stylefeng
+ * @author tom
  * @Date 2017/5/21 12:06
  */
 @SpringBootApplication
-public class GunsApplication extends WebMvcConfigurerAdapter {
+public class XyApplication extends WebMvcConfigurerAdapter {
 
-    protected final static Logger logger = LoggerFactory.getLogger(GunsApplication.class);
+    protected final static Logger logger = LoggerFactory.getLogger(XyApplication.class);
 
     @Autowired
-    GunsProperties gunsProperties;
+    XyProperties gunsProperties;
 
     /**
      * 增加swagger的支持
@@ -35,7 +35,7 @@ public class GunsApplication extends WebMvcConfigurerAdapter {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(GunsApplication.class, args);
+        SpringApplication.run(XyApplication.class, args);
         logger.info("GunsApplication is success!");
     }
 }

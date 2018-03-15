@@ -9,16 +9,16 @@ import static com.stylefeng.guns.core.util.ToolUtil.getTempPath;
 import static com.stylefeng.guns.core.util.ToolUtil.isEmpty;
 
 /**
- * guns项目配置
+ * 项目配置
  *
- * @author stylefeng
+ * @author tom
  * @Date 2017/5/23 22:31
  */
 @Component
-@ConfigurationProperties(prefix = GunsProperties.PREFIX)
-public class GunsProperties {
+@ConfigurationProperties(prefix = XyProperties.PREFIX)
+public class XyProperties {
 
-    public static final String PREFIX = "guns";
+    public static final String PREFIX = "xy";
 
     private Boolean kaptchaOpen = false;
 

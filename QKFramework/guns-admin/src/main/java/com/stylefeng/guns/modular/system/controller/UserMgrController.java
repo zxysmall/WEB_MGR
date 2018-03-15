@@ -9,7 +9,7 @@ import com.stylefeng.guns.common.constant.state.ManagerStatus;
 import com.stylefeng.guns.common.exception.BizExceptionEnum;
 import com.stylefeng.guns.common.persistence.dao.UserMapper;
 import com.stylefeng.guns.common.persistence.model.User;
-import com.stylefeng.guns.config.properties.GunsProperties;
+import com.stylefeng.guns.config.properties.XyProperties;
 import com.stylefeng.guns.core.base.controller.BaseController;
 import com.stylefeng.guns.core.base.tips.Tip;
 import com.stylefeng.guns.core.datascope.DataScope;
@@ -51,7 +51,7 @@ public class UserMgrController extends BaseController {
     private static String PREFIX = "/system/user/";
 
     @Resource
-    private GunsProperties gunsProperties;
+    private XyProperties gunsProperties;
 
     @Resource
     private UserMgrDao managerDao;

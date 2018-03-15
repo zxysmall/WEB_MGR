@@ -2,8 +2,8 @@
 ##################  所有profile共有的配置  #################
 ##########################################################
 
-###################  guns配置  ###################
-guns:
+###################  xy配置  ###################
+xy:
   swagger-open: false #是否开启swagger (true/false)
   kaptcha-open: false #是否开启登录时验证码 (true/false)
   session-open: false #是否开启session超时验证（受影响的类SessionTimeoutInterceptor） (true/false)
@@ -86,7 +86,7 @@ spring:
     filters: log4j,wall,mergeStat
 
 #flowable数据源和多数据源配置
-guns:
+xy:
   flowable:
     datasource:
       url: jdbc:mysql://127.0.0.1:3306/guns_flowable?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
