@@ -46,7 +46,8 @@ public class LoginLogController extends BaseController {
     /**
      * 查询登录日志列表
      */
-    @RequestMapping("/list")
+    @SuppressWarnings("unchecked")
+	@RequestMapping("/list")
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
     public Object list(@RequestParam(required = false) String beginTime, @RequestParam(required = false) String endTime, @RequestParam(required = false) String logName) {
@@ -65,6 +66,6 @@ public class LoginLogController extends BaseController {
     @ResponseBody
     public Object delLog() {
         SqlRunner.db().delete("delete from sys_login_log");
-        return super.SUCCESS_TIP;
+        return SUCCESS_TIP;
     }
 }

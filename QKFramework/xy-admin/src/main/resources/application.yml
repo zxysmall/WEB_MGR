@@ -28,12 +28,8 @@ beetl:
 
 ###################  spring配置  ###################
 spring:
-  redis:
-    host: localhost
-    port: 6379
-    password:
   profiles:
-    active: dev
+    active: $[profiles.active]
   mvc:
     static-path-pattern: /static/**
     view:
@@ -70,55 +66,3 @@ mybatis-plus:
     lazyLoadingEnabled: true #延时加载的开关
     multipleResultSetsEnabled: true #开启的话，延时加载一个属性时会加载该对象全部属性，否则按需加载属性
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
-
----
-
-##########################################################
-###################  开发环境的profile  ###################
-##########################################################
-spring:
-  profiles: dev
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/xy?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
-    username: root
-    password: root
-    db-name: xy
-    filters: log4j,wall,mergeStat
-
-#flowable数据源和多数据源配置
-xy:
-  flowable:
-    datasource:
-      url: jdbc:mysql://127.0.0.1:3306/xy_flowable?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
-      username: root
-      password: root
-  muti-datasource:
-    default-dataSource-name: dataSourceXy #默认的数据源名称
-    url: jdbc:mysql://127.0.0.1:3306/xy_flowable?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
-    username: root
-    password: root
-
-logging:
-  level.root: info
-  level.com.xy: debug
-  path: logs/
-  file: xy.log
-
----
-
-##########################################################
-###################  正式环境的profile  ###################
-##########################################################
-spring:
-  profiles: produce
-  datasource:
-      url: jdbc:mysql://127.0.0.1:3306/xy?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
-      username: root
-      password: root
-      filters: log4j,wall,mergeStat
-
-logging:
-  level.root: warn
-  path: logs/
-  file: xy.log
-

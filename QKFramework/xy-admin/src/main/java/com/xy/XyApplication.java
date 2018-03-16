@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -19,7 +20,7 @@ import com.xy.config.properties.XyProperties;
 @SpringBootApplication
 public class XyApplication extends WebMvcConfigurerAdapter {
 
-    protected final static Logger logger = LoggerFactory.getLogger(XyApplication.class);
+    protected final static Logger LOGGER = LoggerFactory.getLogger(XyApplication.class);
 
     @Autowired
     XyProperties xyProperties;
@@ -36,7 +37,11 @@ public class XyApplication extends WebMvcConfigurerAdapter {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(XyApplication.class, args);
-        logger.info("XyApplication is success!");
+    	ApplicationContext ctx = SpringApplication.run(XyApplication.class, args);
+		String[] activeProfiles = ctx.getEnvironment().getActiveProfiles();  
+        for (String profile : activeProfiles) {  
+	    	LOGGER.info("Spring Boot 使用profile为:{}" , profile);  
+	    }  
+        LOGGER.info("XyApplication is success!");
     }
 }
