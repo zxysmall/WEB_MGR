@@ -3,6 +3,7 @@ package com.xy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -18,7 +19,7 @@ import com.xy.config.properties.XyProperties;
  * @Date 2017/5/21 12:06
  */
 @SpringBootApplication
-public class XyApplication extends WebMvcConfigurerAdapter {
+public class XyApplication extends WebMvcConfigurerAdapter implements CommandLineRunner {
 
     protected final static Logger LOGGER = LoggerFactory.getLogger(XyApplication.class);
 
@@ -42,6 +43,11 @@ public class XyApplication extends WebMvcConfigurerAdapter {
         for (String profile : activeProfiles) {  
 	    	LOGGER.info("Spring Boot 使用profile为:{}" , profile);  
 	    }  
-        LOGGER.info("XyApplication is success!");
     }
+
+	@Override
+	public void run(String... arg0) throws Exception {
+		// TODO Auto-generated method stub
+		LOGGER.info("XyApplication is success!");
+	}
 }

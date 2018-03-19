@@ -5,12 +5,12 @@
 ###################################
 #JDK所在路径
 JAVA_HOME=$JAVA_HOME
-LOG_HOME="/data/log/batch"
+LOG_HOME="/data/logs/xy"
 #执行程序启动所使用的系统用户
 #RUNNING_USER=root
  
 #需要启动的Java主程序（main方法类）
-APP_MAINCLASS=com.tcl.news.batch.NewsBatchApplication
+APP_MAINCLASS=com.xy.XyApplication
 
 #Java程序所在的目录（classes的上一级目录）
 #APP_HOME=/usr/local/news-batch
@@ -18,7 +18,7 @@ APP_MAINCLASS=com.tcl.news.batch.NewsBatchApplication
 APP_HOME=$(cd "$(dirname "$0")"; pwd)
  
 #设置classpath参数，包括指定lib目录下所有的jar及制定类路径
-CLASSPATH=$APP_HOME/conf:$APP_HOME/*:$APP_HOME/lib/*
+CLASSPATH=$APP_HOME/resources:$APP_HOME/*:$APP_HOME/lib/*
 export CLASSPATH=.:$CLASSPATH
 
 #设置当前用户工作目录
