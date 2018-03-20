@@ -150,7 +150,7 @@
             	<jar.env>prod</jar.env>
                 <profiles.active>prod</profiles.active>
                 <application.version>1.0</application.version>
-                <logback.dir>/data/logs/batch</logback.dir>
+                <logback.dir>/data/logs/xy</logback.dir>
             </properties>
         </profile>
         <profile>
@@ -204,15 +204,6 @@
         <resources>
             <resource>
                 <directory>src/main/webapp</directory>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-                <includes>
-					<include>**/application-${profiles.active}.yml</include>
-					<include>**/application.yml</include>
-				</includes>
-				<targetPath>${project.build.directory}/resources</targetPath>
             </resource>
             <resource>
                 <directory>src/main/resources</directory>

@@ -125,7 +125,13 @@
 		<encoder>
 			<pattern>[%date{yyyy-MM-dd HH:mm:ss}] [%thread] [%-5level] [%logger:%line] --%mdc{client} %msg%n</pattern>
 		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
 	</appender>
+	
 	 <springProfile name="!prod">
 		<root level="DEBUG">
 			<appender-ref ref="STDOUT" />
@@ -136,22 +142,17 @@
 			<appender-ref ref="ERROR_FILE" />
 			<appender-ref ref="ALL_FILE" />
 		</root>
-		<logger name="ACCESS" level="INFO" additivity="false">
-	           <appender-ref ref="ACCESS_FILE"/>
-	    </logger>
 	 </springProfile>
 	  <springProfile name="prod">
 		<root level="INFO">
-			<appender-ref ref="STDOUT" />
-			<appender-ref ref="TRACE_FILE" />
-			<appender-ref ref="DEBUG_FILE" />
 			<appender-ref ref="INFO_FILE" />
 			<appender-ref ref="WARN_FILE" />
 			<appender-ref ref="ERROR_FILE" />
-			<appender-ref ref="ALL_FILE" />
 		</root>
-		<logger name="ACCESS" level="INFO" additivity="false">
-	           <appender-ref ref="ACCESS_FILE"/>
-	    </logger>
 	 </springProfile>
+	 
+	<logger name="ACCESS" level="INFO" additivity="false">
+           <appender-ref ref="ACCESS_FILE"/>
+    </logger>
+	    
 </configuration>  
