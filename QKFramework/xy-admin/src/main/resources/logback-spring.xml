@@ -135,6 +135,7 @@
 	
 	 <springProfile name="!prod">
 		<logger name="org" level="info"/>
+		<logger name="com.alibaba" level="info"/>
 		<root level="DEBUG">
 			<appender-ref ref="STDOUT" />
 			<appender-ref ref="TRACE_FILE" />
