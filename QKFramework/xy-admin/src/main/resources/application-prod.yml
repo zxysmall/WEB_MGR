@@ -26,8 +26,4 @@ xy:
     username: root
     password: root
 
-logging:
-  level.root: info
-  level.com.xy: debug
-  path: logs/
-  file: xy.log
+

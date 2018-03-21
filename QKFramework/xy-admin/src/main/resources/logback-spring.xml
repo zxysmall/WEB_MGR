@@ -145,9 +145,13 @@
 	 </springProfile>
 	  <springProfile name="prod">
 		<root level="INFO">
+			<appender-ref ref="STDOUT" />
+			<appender-ref ref="TRACE_FILE" />
+			<appender-ref ref="DEBUG_FILE" />
 			<appender-ref ref="INFO_FILE" />
 			<appender-ref ref="WARN_FILE" />
 			<appender-ref ref="ERROR_FILE" />
+			<appender-ref ref="ALL_FILE" />
 		</root>
 	 </springProfile>
 	 
