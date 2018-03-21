@@ -132,7 +132,9 @@
 		</filter>
 	</appender>
 	
+	
 	 <springProfile name="!prod">
+		<logger name="org" level="info"/>
 		<root level="DEBUG">
 			<appender-ref ref="STDOUT" />
 			<appender-ref ref="TRACE_FILE" />
