@@ -401,3 +401,18 @@ INSERT INTO `sys_user` VALUES ('1', 'girl.gif', 'admin', 'ecfadcde9305f8891bcfe5
 INSERT INTO `sys_user` VALUES ('44', null, 'test', '45abb7879f6a8268f1ef600e6038ac73', 'ssts3', 'test', '2017-05-01 00:00:00', '1', 'abc@123.com', '', '5', '26', '3', '2017-05-16 20:33:37', null);
 INSERT INTO `sys_user` VALUES ('45', null, 'boss', '71887a5ad666a18f709e1d4e693d5a35', '1f7bf', '老板', '2017-12-04 00:00:00', '1', '', '', '1', '24', '1', '2017-12-04 22:24:02', null);
 INSERT INTO `sys_user` VALUES ('46', null, 'manager', 'b53cac62e7175637d4beb3b16b2f7915', 'j3cs9', '经理', '2017-12-04 00:00:00', '1', '', '', '1', '24', '1', '2017-12-04 22:24:24', null);
+
+-- ----------------------------
+-- Table structure for sys_role_data_control && sys_data_control
+-- ----------------------------
+CREATE TABLE `sys_role_data_control` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_id` int(11) DEFAULT NULL COMMENT '角色ID',
+  `data_type` int(2) DEFAULT NULL COMMENT '数据类型',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8 COMMENT='角色数据管控表';
+
+CREATE TABLE `sys_data_control` (
+  `role_id` int(11) NOT NULL,
+  `org_id` int(11) NOT NULL COMMENT '组织ID'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='数据管控表';

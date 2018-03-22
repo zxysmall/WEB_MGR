@@ -1,15 +1,3 @@
-CREATE TABLE `sys_role_data_control` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `role_id` int(11) DEFAULT NULL COMMENT '角色ID',
-  `data_type` int(2) DEFAULT NULL COMMENT '数据类型',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8 COMMENT='角色数据管控表';
-
-CREATE TABLE `sys_data_control` (
-  `role_id` int(11) NOT NULL,
-  `org_id` int(11) NOT NULL COMMENT '组织ID'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='数据管控表';
-
 CREATE TABLE `busi_ticket_order` (
   `id` int(12) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `single_num` int(12) NOT NULL COMMENT '单票数',
