@@ -16,7 +16,10 @@ function deploy(){
     theDate="`date +%m%d%H`"
     cp ${theFile} ${theFile}.${theDate}
     cp ${theSrcFile} /data/webapp/ -rf
-    ${theSrcFile} --spring.profiles.active=prod &
+    ${theSrcFile} --spring.profiles.active=prod >>/dev/null 2>&1 &
+    sleep 1
+    tailf "/data/logs/xy/all.log"
+
 }
 
 function pre(){
@@ -40,4 +43,3 @@ if [ -f ${theSrcFile} ] ; then
 else
     echo "${theSrcFile} NOT EXIST ."
 fi
-
